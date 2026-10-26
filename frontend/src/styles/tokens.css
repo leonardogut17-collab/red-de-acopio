@@ -1,0 +1,74 @@
+/*
+ * Paleta de Red de Acopio
+ *   Espresso         #542916  → color principal (botones, menú, textos fuertes)
+ *   Eau trouble      #b79858  → tonos arena (bordes, etiquetas secundarias)
+ *   Terre cuite      #a13a1e  → urgente / acciones de peligro
+ *   Bleu porcelaine  #88b8ce  → información / estados positivos
+ *   Nuage de lait    #fefaf0  → fondo
+ *   Miel doré        #f1c166  → acento (resaltados sobre fondo oscuro)
+ */
+:root {
+    /* Paleta base */
+    --espresso: #542916;
+    --eau-trouble: #b79858;
+    --terre-cuite: #a13a1e;
+    --bleu-porcelaine: #88b8ce;
+    --nuage-de-lait: #fefaf0;
+    --miel-dore: #f1c166;
+
+    /* Escala principal (Espresso) */
+    --brand-50: #f7eedd;
+    --brand-100: #efe2c8;
+    --brand-200: #e2cda6;
+    --brand-300: #f1c166;   /* miel: acento sobre fondos oscuros */
+    --brand-400: #8a5a3a;   /* foco de campos */
+    --brand-500: #542916;   /* espresso */
+    --brand-600: #45210f;
+    --brand-700: #3a1b0c;
+    --brand-800: #2f160a;
+    --brand-900: #2a1309;   /* menú y footer */
+
+    /* Urgente (Terre cuite) */
+    --terra-100: #f6e0d6;
+    --terra-300: #d98a70;
+    --terra-500: #a13a1e;
+    --terra-700: #7d2c16;
+
+    /* Información (Bleu porcelaine) */
+    --sky-100: #e3eff5;
+    --sky-300: #b4d3e2;
+    --sky-500: #88b8ce;
+    --sky-700: #3d6c82;
+
+    /* Acento (Miel doré) y arena (Eau trouble) */
+    --honey-100: #fbefd2;
+    --honey-500: #f1c166;
+    --honey-700: #7a5410;
+    --sand-100: #f1e8d4;
+    --sand-500: #b79858;
+    --sand-700: #7d6535;
+
+    /* Superficies y texto */
+    --bg: #fefaf0;
+    --surface: #fffdf8;
+    --surface-2: #f8f1e2;
+    --border: #ece1cc;
+    --border-2: #dccbaa;
+    --border-3: #c9b38a;
+    --text: #2a1309;
+    --text-2: #6b4a36;
+    --text-3: #9a7f68;
+    --text-4: #b8a28c;
+    --ok: #3d6c82; --warn: #b79858; --danger: #a13a1e;
+
+    --shadow-sm: 0 1px 3px rgba(84,41,22,0.07);
+    --shadow: 0 4px 12px rgba(84,41,22,0.08);
+    --shadow-lg: 0 12px 40px rgba(84,41,22,0.12);
+    --shadow-xl: 0 24px 80px rgba(84,41,22,0.16);
+    --ring: 0 0 0 4px rgba(84,41,22,0.10);
+
+    --radius-sm: 6px; --radius: 10px; --radius-lg: 16px; --radius-xl: 24px;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: 'SF Mono', 'Cascadia Mono', Consolas, monospace;
+    --max-w: 1200px; --header-h: 72px;
+}

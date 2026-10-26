@@ -1,0 +1,90 @@
+/* Base heredada de Sitial (tokens.css) con utilidades para Red de Acopio */
+@import "./tokens.css";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body { font-family: var(--font-sans); background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, h4 { line-height: 1.2; letter-spacing: -0.02em; color: var(--text); }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Botones */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; border-radius: var(--radius); font-weight: 600; font-size: 14px; border: 1.5px solid transparent; cursor: pointer; transition: background .15s, border-color .15s, color .15s, transform .15s; font-family: var(--font-sans); white-space: nowrap; }
+.btn:disabled { opacity: .55; cursor: not-allowed; transform: none !important; }
+.btn-primary { background: var(--brand-500); color: #fff; box-shadow: 0 4px 14px rgba(84,41,22,0.25); }
+.btn-primary:hover:not(:disabled) { background: var(--brand-600); transform: translateY(-1px); }
+.btn-secondary { background: #fff; color: var(--text); border-color: var(--border-2); }
+.btn-secondary:hover:not(:disabled) { border-color: var(--brand-400); color: var(--brand-600); }
+.btn-danger { background: #fff; color: var(--terra-700); border-color: var(--terra-100); }
+.btn-danger:hover:not(:disabled) { background: var(--terra-100); }
+.btn-lg { padding: 13px 26px; font-size: 15px; }
+.btn-sm { padding: 6px 12px; font-size: 12.5px; }
+.btn-block { width: 100%; }
+
+.icon-btn { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; border: 0; background: transparent; color: var(--text-2); cursor: pointer; transition: background .15s, color .15s; }
+.icon-btn:hover { background: var(--brand-50); color: var(--brand-700); }
+.icon-btn.danger:hover { background: var(--terra-100); color: var(--terra-700); }
+
+.link { display: inline-flex; align-items: center; gap: 4px; color: var(--brand-600); font-weight: 600; font-size: 13px; background: none; border: 0; cursor: pointer; }
+.link:hover { color: var(--brand-700); }
+
+/* Formularios */
+.form-group { margin-bottom: 16px; }
+.form-label { display: block; font-size: 12.5px; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+.form-input, .form-select { width: 100%; padding: 10px 13px; border: 1.5px solid var(--border-2); border-radius: var(--radius); background: var(--surface-2); font-size: 14px; transition: border-color .15s, background .15s, box-shadow .15s; }
+.form-input:focus, .form-select:focus { outline: none; border-color: var(--brand-400); background: #fff; box-shadow: var(--ring); }
+.form-select.compact { padding: 6px 10px; font-size: 13px; width: auto; }
+textarea.form-input { resize: vertical; }
+.form-hint { display: block; margin-top: 5px; font-size: 12px; color: var(--text-3); }
+.check { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-2); cursor: pointer; }
+.check input { width: 16px; height: 16px; accent-color: var(--brand-500); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; }
+.form-grid .span-2 { grid-column: span 2; }
+.form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+@media (max-width: 560px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .span-2 { grid-column: auto; }
+}
+
+/* Avisos */
+.alert { padding: 10px 14px; border-radius: var(--radius); background: var(--brand-50); color: var(--brand-700); font-size: 13.5px; margin-bottom: 16px; }
+.alert-error { background: var(--terra-100); color: var(--terra-700); }
+
+/* Etiquetas */
+.badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 100px; font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+.badge-alta, .badge-cancelada { background: var(--terra-100); color: var(--terra-700); }
+.badge-media, .badge-prometida { background: var(--honey-100); color: var(--honey-700); }
+.badge-baja { background: var(--sand-100); color: var(--sand-700); }
+.badge-recibida { background: var(--sky-100); color: var(--sky-700); }
+.chip { display: inline-flex; padding: 3px 10px; border-radius: 100px; background: var(--brand-50); color: var(--brand-700); font-size: 11.5px; font-weight: 700; }
+.ml { margin-left: 8px; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px 22px; box-shadow: var(--shadow-sm); }
+
+.muted { color: var(--text-3); }
+.small { font-size: 13px; }
+.center { text-align: center; }
+.block { display: block; }
+.nowrap { white-space: nowrap; }
+.capitalize { display: inline-block; }
+.capitalize::first-letter { text-transform: uppercase; }
+.ok { color: var(--sky-700); }
+.urgent { color: var(--terra-500); }
+
+.loading, .loading-page { padding: 48px; text-align: center; color: var(--text-3); }
+.loading-page { min-height: 100vh; display: grid; place-items: center; }
+
+/* Pines de mapa (Leaflet divIcon) */
+.map-pin { display: block; width: 30px; height: 40px; position: relative; filter: drop-shadow(0 3px 4px rgba(42,19,9,.35)); }
+.map-pin::before { content: ""; position: absolute; left: 3px; top: 1px; width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--brand-500); border: 2.5px solid #fff; }
+.map-pin span { position: absolute; left: 11px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.map-pin--urgent::before { background: var(--terra-500); }
+.map-pin--selected::before { background: var(--miel-dore); border-color: var(--espresso); width: 28px; height: 28px; left: 1px; top: -3px; }
+.map-pin--selected span { top: 7px; background: var(--espresso); }
+.map-pin--picker::before { background: var(--sky-700); }
+.map-popup { display: grid; gap: 2px; font-family: var(--font-sans); font-size: 12.5px; color: var(--text-2); min-width: 180px; }
+.map-popup b { color: var(--text); font-size: 13.5px; }
+.leaflet-box { width: 100%; height: 100%; min-height: 320px; border-radius: inherit; z-index: 0; }
+.leaflet-picker { width: 100%; height: 240px; border-radius: var(--radius); border: 1.5px solid var(--border-2); z-index: 0; cursor: crosshair; }

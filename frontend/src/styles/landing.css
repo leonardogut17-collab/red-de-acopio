@@ -1,0 +1,55 @@
+/* Página pública de Red de Acopio (estilo base de Sitial: public.css) */
+.public-layout { min-height: 100vh; display: flex; flex-direction: column; }
+.public-main { flex: 1; }
+.landing h1 { font-size: clamp(34px, 5vw, 56px); font-weight: 800; }
+.landing h2 { font-size: clamp(26px, 3vw, 36px); font-weight: 800; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; margin-bottom: 22px; border-radius: 100px; background: #fff; color: var(--brand-700); font-size: 12.5px; font-weight: 700; box-shadow: var(--shadow-sm); }
+.hero { padding: 96px 0 80px; }
+.hero-actions { margin-bottom: 56px; }
+.hero-stats b.urgent { color: var(--terra-500); }
+
+.landing-map-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 20px; }
+.landing-map { height: 460px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.landing-center-list { list-style: none; display: grid; gap: 10px; align-content: start; max-height: 460px; overflow-y: auto; }
+.landing-center-list li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); }
+.landing-center-list li > div { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.landing-center-list b { font-size: 14.5px; }
+.landing-center-list span { font-size: 13px; color: var(--text-2); }
+.landing-center-list span.muted { color: var(--text-3); }
+.landing-center-list svg { flex-shrink: 0; margin-top: 2px; color: var(--brand-500); }
+.landing-center-list svg.urgent { color: var(--terra-500); }
+
+.section-soft { background: var(--brand-50); }
+.need-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.need-card { padding: 20px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); display: grid; gap: 6px; }
+.need-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.need-card h3 { font-size: 17px; }
+.need-qty { font-family: var(--font-mono); font-weight: 700; color: var(--brand-700); }
+.need-card .muted { display: flex; align-items: center; gap: 4px; font-size: 13px; }
+
+.eyebrow-dark { background: rgba(241,193,102,.16) !important; color: var(--brand-300) !important; }
+.how-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.how-card { padding: 28px; border-radius: var(--radius-lg); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); display: grid; gap: 12px; align-content: start; }
+.how-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: rgba(241,193,102,.16); color: var(--brand-300); }
+.how-card h3 { color: #fff; font-size: 18px; }
+.how-card p { color: rgba(255,255,255,.7); font-size: 14.5px; }
+.how-link { display: inline-flex; align-items: center; gap: 6px; color: var(--brand-300); font-weight: 600; font-size: 14px; }
+.how-link:hover { color: #fff; }
+
+@media (max-width: 900px) {
+  .site-nav { display: none; }
+  .header-inner { gap: 16px; justify-content: space-between; }
+  .landing-map-grid, .need-grid, .how-grid { grid-template-columns: 1fr; }
+  .landing-map { height: 340px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .section { padding: 64px 0; }
+}
+@media (max-width: 520px) {
+  .site-actions .btn-ghost { display: none; }
+  .site-brand > span:last-child { font-size: 17px; }
+  .hero { padding: 64px 0 56px; }
+  .hero-stats .stat { padding: 20px 10px; }
+  .hero-stats .stat b { font-size: 26px; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
