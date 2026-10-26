@@ -10,13 +10,13 @@ El proyecto parte del prototipo (backend Express + SQLite con login JWT) y reuti
 | --- | --- |
 | Backend | Node.js 20+, Express 5, better-sqlite3, JWT, bcryptjs, helmet, express-rate-limit |
 | Frontend | React 18, TypeScript, Vite, React Router, Leaflet + OpenStreetMap, lucide-react |
-| Datos | SQLite (archivo `backend/database.sqlite`, se crea solo) |
+| Datos | SQLite (archivo `App/backend/database.sqlite`, se crea solo) |
 
 > El mapa usa **OpenStreetMap** con Leaflet, así que **no necesita clave de Google Maps** (a diferencia de Sitial).
 
 ## Identidad visual
 
-El logo está en `frontend/public/assets/images/logo.png` (y `favicon.png`). Los colores se definen en `frontend/src/styles/tokens.css`:
+El logo está en `App/frontend/public/assets/images/logo.png` (y `favicon.png`). Los colores se definen en `App/frontend/src/styles/tokens.css`:
 
 | Color | Hex | Uso |
 | --- | --- | --- |
@@ -42,6 +42,15 @@ Al registrarse solo se puede elegir donante o voluntario. Los roles de coordinad
 
 ```text
 .
+└── App/
+    ├── backend/
+    └── frontend/
+```
+
+Detalle de cada carpeta:
+
+```text
+App/
 ├── backend/
 │   ├── src/
 │   │   ├── config/database.js        # Conexión SQLite y creación de tablas
@@ -83,7 +92,7 @@ Necesitas **Node.js 20 o superior**.
 ### 1. Backend (puerto 4000)
 
 ```bash
-cd backend
+cd App/backend
 npm install
 ```
 
@@ -114,7 +123,7 @@ npm run dev
 En otra terminal:
 
 ```bash
-cd frontend
+cd App/frontend
 npm install
 npm run dev
 ```
@@ -132,7 +141,7 @@ Abre <http://localhost:3000>. En desarrollo, Vite reenvía las peticiones `/api`
 
 > Cambia o elimina estas cuentas antes de publicar la aplicación.
 
-Para empezar con la base de datos vacía, borra `backend/database.sqlite*` y vuelve a ejecutar `npm run seed`.
+Para empezar con la base de datos vacía, borra `App/backend/database.sqlite*` y vuelve a ejecutar `npm run seed`.
 
 ## API
 
